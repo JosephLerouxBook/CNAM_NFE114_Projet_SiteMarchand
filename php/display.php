@@ -1,6 +1,14 @@
 <?php
-    require "connexion.php";
-    include "queries.php";
+require "connexion.php";
+include "queries.php";
+
+// VARIABLE GLOBALE
+if($_GET['inf']){
+    //echo($_GET['inf']); //TROUBLESHOOT
+    $getInfo = $_GET['inf'];
+}
+
+// FONCTIONS
 
 //Fonction affichant le header de la table 
 function displayHeader($results){
@@ -10,12 +18,13 @@ function displayHeader($results){
             <thead>
                 <tr>';
     foreach ($headers as $header){
-        //Correction des header
+        //Correction des header 
         if($header == "id"){$header = "ID";}
         if($header == "diam"){$header = "Diamètre";}
         if($header == "color"){$header = "Couleur";}
         if($header == "prixUnitaire"){$header = "Prix Unitaire";}
         if($header == "quantite"){$header = "Quantité";}
+        
         echo "<th '>";
         echo ucfirst($header);
         echo "</th>";
@@ -25,17 +34,14 @@ function displayHeader($results){
 }
 
 //Fonction affichant le contenu de la table
-function displayContent($results){
+function displayContentOutils($results){
     //var_dump($results); //TROUBLESHOOT
-    $headers = array_keys($results[0]);
-    //var_dump($headers); //TROUBLESHOOT
     echo '<tbody>';
     foreach($results as $result){
         echo '<tr>';
 
         if(isset($result['id']) == true){
             $id = $result['id'];
-            echo '[]';
             echo '<td style="text-align:center">'.$id.'</td>';
         }
         if(isset($result['nom']) == true){
@@ -68,19 +74,25 @@ function displayContent($results){
         </table>';
 }
 
+//Function principale
 function main($inf){
     $dbcon = dbConnexion();
-    if($inf = "outils"){
-        $result = tableQuery("main.alesoirtaraudslames", $dbcon);
+    switch ($inf){
+        case "outils":
+            $result = tableQuery("main.alesoirtaraudslames", $dbcon);
+            displayHeader($result);
+            displayContentOutils($result);
+            break;
+        case "bobines":
+            $result = tableQuery("main.bobines", $dbcon);
+            break;
+        //AJOUT DES CASES POUR CHAQUE LIENS
     }
-    else{
 
-    }
-    displayHeader($result);
-    displayContent($result);
 }
-//echo($_GET['inf']);
-main($_GET['inf']);
+
+// APPEL DU MAIN
+main($getInfo);
 
 ?>
 
