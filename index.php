@@ -9,18 +9,18 @@
 <body>
     <!-- Récuperation des données de la base de données --> 
     <?php 
-        require "php/connexion.php";
-        include "php/queries.php";
-        include "php/display.php";
-        $dbcon = dbConnexion();
-        $resultBobines = tableQuery("main.bobines", $dbcon);
+        # require "php/connexion.php";
+        # include "php/queries.php";
+        # include "php/display.php";
+        # $dbcon = dbConnexion();
+        # $resultBobines = tableQuery("main.bobines", $dbcon);
     ?>
 
     <div id="mypanel" class="sidepanel">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul class="menu-main" style="position: static;">
         <li id="view" class="has-submenu is-selected is-expanded">
-            <a>Outils</a>
+            <a href="php/display.php?inf=outils">Outils</a>
             <ul class="submenu" style="max-height: 185px;">
                 <li class="is-selected">
                     <a>Alésoirs</a>
@@ -184,8 +184,8 @@
     <!-- Tableau de index.php -->
     <table>
         <?php
-            displayHeader($resultBobines);
-            displayContent($resultBobines);
+            # displayHeader($resultBobines);
+            # displayContent($resultBobines);
         ?>
     </table>
 </body>

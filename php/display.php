@@ -1,10 +1,14 @@
 <?php
+    require "connexion.php";
+    include "queries.php";
+
 //Fonction affichant le header de la table 
 function displayHeader($results){
     $headers = array_keys($results[0]);
     //var_dump($headers); //TROUBLESHOOT
-    echo '<thead>
-            <tr>';
+    echo '<table>
+            <thead>
+                <tr>';
     foreach ($headers as $header){
         //Correction des header
         if($header == "id"){$header = "ID";}
@@ -17,35 +21,66 @@ function displayHeader($results){
         echo "</th>";
     }
     echo '  </tr>
-        </thead><br>';
+        </thead>';
 }
 
+//Fonction affichant le contenu de la table
 function displayContent($results){
     //var_dump($results); //TROUBLESHOOT
     $headers = array_keys($results[0]);
     //var_dump($headers); //TROUBLESHOOT
     echo '<tbody>';
     foreach($results as $result){
-        $id = $result['id'];
-
-        $nom = $result['nom'];
-        if($nom == "nom"){$nom="Nom";}
-        $diam = $result['diam'];
-        $color = $result['color'];
-        $poids = $result['poids'];
-        $PU = $result['prixUnitaire'];
-        $quantite = $result['quantite'];
-
         echo '<tr>';
-        echo '<td style="text-align:center">'.$id.'</td>';
-        echo '<td style="text-align:center">'.$nom.'</td>';
-        echo '<td style="text-align:center">'.$diam.'</td>';
-        echo '<td style="text-align:center">'.$color.'</td>';
-        echo '<td style="text-align:center">'.$poids.'</td>';
-        echo '<td style="text-align:center">'.$PU.'€</td>';
-        echo '<td style="text-align:center">'.$quantite.'</td>';
+
+        if(isset($result['id']) == true){
+            $id = $result['id'];
+            echo '[]';
+            echo '<td style="text-align:center">'.$id.'</td>';
+        }
+        if(isset($result['nom']) == true){
+            $nom = $result['nom'];
+            echo '<td style="text-align:center">'.$nom.'</td>';
+        }
+        if(isset($result['diam']) == true){
+            $diam = $result['diam'];
+            echo '<td style="text-align:center">'.$diam.'</td>';
+        }
+        if(isset($result['color']) == true){
+            $color = $result['color'];
+            echo '<td style="text-align:center">'.$color.'</td>';
+        }
+        if(isset($result['poids']) == true){
+            $poids = $result['poids'];
+            echo '<td style="text-align:center">'.$poids.'</td>';
+        }
+        if(isset($result['prixUnitaire']) == true){
+            $PU = $result['prixUnitaire'];
+            echo '<td style="text-align:center">'.$PU.'€</td>';
+        }
+        if(isset($result['quantite']) == true){
+            $quantite = $result['quantite'];    
+            echo '<td style="text-align:center">'.$quantite.'</td>';
+        }
         echo '</tr>';
     }
-    echo '</tbody>';
+    echo '</tbody>
+        </table>';
 }
+
+function main($inf){
+    $dbcon = dbConnexion();
+    if($inf = "outils"){
+        $result = tableQuery("main.alesoirtaraudslames", $dbcon);
+    }
+    else{
+
+    }
+    displayHeader($result);
+    displayContent($result);
+}
+//echo($_GET['inf']);
+main($_GET['inf']);
+
 ?>
+
