@@ -1,6 +1,7 @@
 # CNAM_NFE114_Projet_SiteMarchand
 
 Projet CNAM de l'UE NFE114 dans lequel nous devons réaliser un site marchand.
+Le compte rendu est dans /DOCUMENTS et la base de donner dans /BDD
 
 ## Pré-requis
 Pour faire tourner la solutions, vous aurez besoin de : 
@@ -41,3 +42,20 @@ Les fonctionnalités sont pour l'instant relativement limiter :
 ### Du code
 
 - Les lignes commenté de « //TROUBLESHOOT » sont à décommenté s’il y a un souci avec le site afin de voir si le comportement du code est correct.
+
+Chaque partie est dans un dossier associé. 
+On retrouveras : 
+- css
+  - css-magasin.css : css de l'accueil.
+  - css-modif-stock.css : css de la page d'ajout de donnée dans la base de donnée.
+- js
+  - magasin.js : code lié a l'apparition/disparition de la navbar
+- php
+  - addToDB.php : Code lié au formulaire d'ajout de donnée dans la BDD
+  - connexion.php : Fonction permettant la connexion a la BDD
+  - display.php : Fonctions lié a l'affichage des tables html depuis les tables de la BDD
+  - queries.php : Fonctions executant les requêtes SQL sur la BDD
+
+ensuite a la racine nous avons 2 pages principales : 
+- index.php : page d'acceuil, avec la navbar et le bouton redirigeant vers le formulaire.
+- modif-stock.php : formulaire d'ajout de donnée à la BDD.
