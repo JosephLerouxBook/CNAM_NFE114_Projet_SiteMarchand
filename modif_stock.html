@@ -9,11 +9,12 @@
 <body>
     <div class="form-container">
         <h2>Ajouter un Objet</h2>
-        <form id="addItemForm">
+        <form id="addItemForm" action="/php/addToDB.php" method="post">
             <label for="category">Catégorie :</label>
             <select id="category" name="category">
                 <option value="Outils">Outils</option>
                 <option value="Bobines">Bobines</option>
+                <!--
                 <option value="Cartouches d'imprimantes">Cartouches d'imprimantes</option>
                 <option value="Consommables">Consommables</option>
                 <option value="Disques troncs, meules">Disques troncs, meules</option>
@@ -24,6 +25,7 @@
                 <option value="Papier de verre, toile">Papier de verre, toile</option>
                 <option value="Piles">Piles</option>
                 <option value="Tiges filetées">Tiges filetées</option>
+                -->
             </select>
             <label for="itemName">Nom de l'objet :</label>
             <input type="text" id="itemName" name="itemName" required>
