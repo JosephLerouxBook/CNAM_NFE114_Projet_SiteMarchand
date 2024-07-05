@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/css-magasin.css">
 </head>
 <body>
-    <!-- Récuperation des données de la base de données --> 
+    <!-- Récuperation des données de la base de données pour afficher l'ensemble des tableaux--> 
     <?php 
         # require "php/connexion.php";
         # include "php/queries.php";
@@ -85,7 +85,7 @@
     <button class="modifbtn" onclick="location.href = 'modif_stock.html';" id="modifbtn" class="float-left submit-button">Modifier le stock</button>
     <script src="page_web.html"></script>
 
-    <!-- Tableau de index.php -->
+    <!-- Tableau de index.php : Enlever, Ajout de l'ensemble des tableaux à implementer -->
     <table>
         <?php
             # displayHeader($resultBobines);

@@ -1,4 +1,4 @@
 <?php
-
+// RECUPERE LES DONNEE DU POST ENCULER
 
 ?>
