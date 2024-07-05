@@ -1,0 +1,11 @@
+﻿dom;mot;diam;epais;alesa;fer;plate
+Disque;a meuler;115;6,3;22,23;0;
+Disque;a tronconner;115;1,6;0;0;
+Disque;a tronconner;125;2,4;22,5;0;
+Disque;a meuler;125;6,4;22;0;
+Disque;a tronconner;250;1,8;32;VRAI;
+Disque;a tronconner;250;1,6;32;FAUX;
+Disque;a tronconner;250;2;31,75;FAUX;
+Meule;a tronconner;230;3,2;22,2;0;a moyeu deporte
+Meule;a meuler;230;6,8;22,2;0;a moyeu deporte
+Meule;a tronconner;300;3,5;25,4;0;plate
