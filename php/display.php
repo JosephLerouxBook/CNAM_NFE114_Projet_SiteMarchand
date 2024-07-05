@@ -34,7 +34,7 @@ function displayHeader($results){
 }
 
 //Fonction affichant le contenu de la table
-function displayContentOutils($results){
+function displayContentBobines($results){
     //var_dump($results); //TROUBLESHOOT
     echo '<tbody>';
     foreach($results as $result){
@@ -79,12 +79,14 @@ function main($inf){
     $dbcon = dbConnexion();
     switch ($inf){
         case "outils":
-            $result = tableQuery("main.alesoirtaraudslames", $dbcon);
+            $result = tableQueryGet("main.alesoirtaraudslames", $dbcon);
             displayHeader($result);
-            displayContentOutils($result);
+            //displayContentOutils($result);
             break;
         case "bobines":
-            $result = tableQuery("main.bobines", $dbcon);
+            $result = tableQueryGet("main.bobines", $dbcon);
+            displayHeader($result);
+            displayContentBobines($result);
             break;
         //AJOUT DES CASES POUR CHAQUE LIENS
     }

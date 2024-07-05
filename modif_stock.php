@@ -9,7 +9,7 @@
 <body>
     <div class="form-container">
         <h2>Ajouter un Objet</h2>
-        <form id="addItemForm" action="/php/addToDB.php" method="post">
+        <form id="addItemForm" action="php/addToDB.php" method="post">
             <label for="category">Catégorie :</label>
             <select id="category" name="category">
                 <option value="Outils">Outils</option>
@@ -29,7 +29,7 @@
             </select>
             <label for="itemName">Nom de l'objet :</label>
             <input type="text" id="itemName" name="itemName" required>
-            <button type="button" onclick="addItem()">Ajouter</button>
+            <button type="submit" >Ajouter</button>
         </form>
     </div>
 

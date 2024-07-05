@@ -34,6 +34,9 @@ Sur Apache sous ubuntu, dans var/www.
 ## Utilisation 
 
 ### De l'interface
+Les fonctionnalités sont pour l'instant relativement limiter : 
+- Nous pouvons acceder a la page affichant les bobines en cliquant sur 'bobines' dans la navbar de gauche. ("outils" demande la création d'une fonction adapté)
+- Nous pouvons ajouter le nom d'un alesoir taraud ou lame // d'une bobine dans la base de donner depuis "modifier le stock" sur l'index.php.
 
 ### Du code
 

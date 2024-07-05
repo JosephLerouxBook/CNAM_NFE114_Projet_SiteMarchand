@@ -19,15 +19,16 @@
     <div id="mypanel" class="sidepanel">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul class="menu-main" style="position: static;">
+        <li id="services" class="has-submenu">
+            <a href="php/display.php?inf=bobines">Bobines</a>
+        </li>
         <li id="view" class="has-submenu is-selected is-expanded">
             <a href="php/display.php?inf=outils">Outils</a>
 
         </li>
 
 
-    <li id="services" class="has-submenu">
-        <a>Bobines</a>
-    </li>
+
 <!--
     <li id="services" class="has-submenu">
         <a>Cartouches d'imprimantes</a>
@@ -82,7 +83,7 @@
     <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
     <script src="js/magasin.js"></script>
 
-    <button class="modifbtn" onclick="location.href = 'modif_stock.html';" id="modifbtn" class="float-left submit-button">Modifier le stock</button>
+    <button class="modifbtn" onclick="location.href = 'modif_stock.php';" id="modifbtn" class="float-left submit-button">Modifier le stock</button>
     <script src="page_web.html"></script>
 
     <!-- Tableau de index.php : Enlever, Ajout de l'ensemble des tableaux à implementer -->
